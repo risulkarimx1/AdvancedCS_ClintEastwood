@@ -9,6 +9,13 @@ public class E14_TaskParallelLibrary : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
+
+        //var ints = new List<int> { 123, 34, 134, 1234, 314, 5134, 5134, 5 };
+
+        //Parallel.ForEach(ints, (i) => Debug.Log(i));
+        Parallel.For(0,10,(i)=>Debug.Log(i));
+         
         //var t1 = new Task(() => GetDataFromServer("t1", 1034));
         //var t2 = new Task(() => GetDataFromServer("t2", 3431));
         //var t3 = new Task(() => GetDataFromServer("t3", 1234));
@@ -22,18 +29,18 @@ public class E14_TaskParallelLibrary : MonoBehaviour
 
 
 
-        var t1 = Task.Factory.StartNew(() => GetDataFromServer("t1", 8193));
-        var t2 = Task.Factory.StartNew(() => GetDataFromServer("t2", 3245));
-        var t3 = Task.Factory.StartNew(() => GetDataFromServer("t3", 4545));
-        var t4 = Task.Factory.StartNew(() => GetDataFromServer("t4", 4614));
+        //var t1 = Task.Factory.StartNew(() => GetDataFromServer("t1", 8193));
+        //var t2 = Task.Factory.StartNew(() => GetDataFromServer("t2", 3245));
+        //var t3 = Task.Factory.StartNew(() => GetDataFromServer("t3", 4545));
+        //var t4 = Task.Factory.StartNew(() => GetDataFromServer("t4", 4614));
 
-        List<Task> taskList = new List<Task> { t1, t2, t3, t4 };
-        Task.WaitAll(taskList.ToArray());
+        //List<Task> taskList = new List<Task> { t1, t2, t3, t4 };
+        //Task.WaitAll(taskList.ToArray());
 
-        Debug.Log("Done with task 1 to 4");
+        //Debug.Log("Done with task 1 to 4");
 
-        var t5 = Task.Factory.StartNew(() => GetDataFromServer("t5", 4354));
-        var t6 = Task.Factory.StartNew(() => GetDataFromServer("t6", 4245));
+        //var t5 = Task.Factory.StartNew(() => GetDataFromServer("t5", 4354));
+        //var t6 = Task.Factory.StartNew(() => GetDataFromServer("t6", 4245));
 
     }
     public void GetDataFromServer(string taskId, int duration)
